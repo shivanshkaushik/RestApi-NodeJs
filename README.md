@@ -21,7 +21,10 @@ The rest api exposes endpoints to perform the following functions:
 <li><b>Sample request:</b> <i>curl -H "Content-Type: application/json" http://localhost:8080/products/12345</i></li>
 </ul>
 </li>
-
+  <h3>Dependencies</h3>
+  <ul><li><b>Node.js</b> is required to run the application. Node.js can be installed through the following link <a href='https://nodejs.org/en/download/'>Node.js download</a> by following the instructions on the page.</li>
+    <li> <b>Express</b> framework for node.js needs to be installed as the rest api is built and hosted using the functions in the express framework. To install, run the terminal and execute the command "npm install express".</li>
+    <li> The api also requires the installation of <b>lowdb</b>, which is a lightweight and simple JSON database for node.js. It has database adapters to work as both traditional and in-memory databases. In our api, we have used the in-memory adapters. Lowdb can be installed by running the following command in the terminal "npm install lowdb".</li></ul>
 <h3>Known Bugs:</h3>
 <ul><li>Requests are processed as expected when they are sent using a client application such as Postman but fails when sent through CLI using cURL when the JSON body and/or headers are enclosed in single quotes('). The request is processed as expected when headers and JSON body are enclosed with double quotes(") and the quotes used for JSON key and values are escaped using backslash(\).<br>
 <b>Incorrect format:</b> <i>curl -X POST -H "Content-Type: application/json" -d '{"stock_number":"12345","name":"Pro Batteries","Description":"Batteries","Price":"£1.99"}' http://localhost:8080/products</i><br>
